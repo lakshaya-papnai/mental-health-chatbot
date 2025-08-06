@@ -38,15 +38,19 @@
             box-sizing: border-box;
         }
 
+        html {
+            height: -webkit-fill-available;
+        }
+
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-primary);
-            height: 100vh;
+            height: 100vh; /* Fallback for browsers that do not support dvh */
+            height: 100dvh; /* Dynamic viewport height */
             display: flex;
             flex-direction: column;
             transition: background-color 0.3s ease, color 0.3s ease;
-            overflow: hidden;
         }
 
         .header {
